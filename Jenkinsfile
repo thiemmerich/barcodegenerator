@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'javac barcodegenerator/BarCodeApplication/src/com/emmerich/main/Main.java' 
+                sh 'javac BarCodeApplication/src/com/emmerich/main/Main.java' 
             }
         }
     }
