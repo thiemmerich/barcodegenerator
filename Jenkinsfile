@@ -13,13 +13,13 @@ pipeline {
         stage('Docker Compile Class') {
             agent any
             steps {
-                sh 'cd BarCodeApplication && docker run --rm -v $PWD:/app -w /app demo/oracle-java:8 javac /src/com/emmerich/main/Main.java'
+                sh 'cd BarCodeApplication && docker run --rm -v $PWD:/app -w /app demo/oracle-java:8 javac ./src/com/emmerich/main/Main.java'
             }
         }    
         stage('Docker Execute Java Class') {
             agent any
             steps {
-                sh 'cd BarCodeApplication && docker run --rm -v $PWD:/app -w /app demo/oracle-java:8 javac /src/com/emmerich/main/Main.java && docker run --rm -v $PWD:/app -w /app demo/oracle-java:8 java Main'
+                sh 'cd BarCodeApplication && docker run --rm -v $PWD:/app -w /app demo/oracle-java:8 javac ./src/com/emmerich/main/Main.java && docker run --rm -v $PWD:/app -w /app demo/oracle-java:8 java Main'
             }
         }        
     }
